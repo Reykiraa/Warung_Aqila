@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: -2px;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -48,7 +48,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 99;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -56,9 +56,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem;
-  max-width: 1400px;
+  max-width: 1150px;
   margin: 0 auto;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .menu {
@@ -179,6 +178,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-top: 25px;
 }
 
 footer {
@@ -189,13 +189,13 @@ footer {
   justify-content: center;
   position: relative;
   background-color: #5a5a5a;
+  gap: 20px;
 }
 
 footer p:nth-child(1) {
   font-size: 30px;
   font-weight: bold;
   color: #FFFFFF;
-  line-height: 10px;
 }
 
 footer p:nth-child(2) {
