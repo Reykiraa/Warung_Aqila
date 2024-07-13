@@ -1,8 +1,12 @@
 * {
-  margin: -2px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'poppins';
 }
 
 .body-home {
@@ -34,17 +38,10 @@ body:before {
   z-index: -1;
 }
 
-
-header h1 {
-  color: white;
-  font-size: 6rem;
-  text-shadow: 2px 2px 2px cyan;
-  font-family: tahoma;
-}
-
 nav {
   background-color: #bb7c46;
   backdrop-filter: blur(5px);
+  width: 100%;
   position: sticky;
   top: 0;
   z-index: 99;
@@ -92,53 +89,6 @@ nav {
   max-height: 80%;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  padding-bottom: 0.2rem;
-  border-radius: 5px;
-}
-
-.food {
-  margin-bottom: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-}
-
-.food h2 {
-  margin-bottom: 0.5rem;
-  width: 100%;
-}
-
-.food-item {
-  /* background-color: white;
-	box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
-  margin: 0.5rem;
-  max-width: 300px;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding: 1rem;
-  border-radius: 5px;
-  flex: 1;
-  transition: transform 0.2s ease;
-}
-
-.food-item:hover {
-  transform: scale(1.1);
-}
-
-.food-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  min-width: 200px;
-  min-height: 150px;
-}
-
 .text-home {
   color: white;
   text-align: center;
@@ -172,6 +122,7 @@ nav {
   padding: 50px 0;
   justify-content: center;
   gap: 2rem;
+  background-color: #5a5a5a;
 }
 
 .text-kontak {
@@ -188,7 +139,7 @@ footer {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: #5a5a5a;
+  background-color: #171717;
   gap: 20px;
 }
 
@@ -244,23 +195,161 @@ footer p:nth-child(2) {
     justify-content: center;
 }
 
-/* style pesan.html */
+.container, .container-order {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem 1rem 0;
+  border-radius: 5px;
+}
+
+/* STYLING FOR pesan.html */
+
+.food {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.food h2 {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.food-item {
+  margin-bottom: 0;
+  max-width: 300px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 1rem;
+  border-radius: 5px;
+  flex: 1;
+  transition: transform 0.2s ease;
+}
+
+.food-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  min-width: 200px;
+  min-height: 150px;
+}
 
 .tambah {
-  padding: 0.1rem 0.075rem;
+  margin-top: 10px;
+  padding: 0.3rem 0.075rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   border-radius: 3rem;
-  background-color: #161616;
-  color: #efefef;
-  background-color: #161616;
+  background-color: #171717;
   color: #efefef;
   border-style: none;
+  cursor: pointer;
+  transition: all 500ms;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tambah:hover {
+  color: #171717;
+  background-color: #efefef;
+}
+
+.container-order {
+  margin-top: -1.5rem;
+}
+
+.order {
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 3rem;
+  background-color: #1dba4a;
+  color: #171717;
+  border: none;
   cursor: pointer;
   transition: all 300ms;
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+/* STYLING FOR login.html */
+
+.form {
+  --bg-light: #efefef;
+  --bg-dark: #161616;
+  --clr: #161616;
+  --clr-alpha: #9c9c9c60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+  outline: 2px solid var(--clr);
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+.form .submit {
+  padding: 1rem 0.75rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 3rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form .submit:hover {
+  background-color: var(--bg-light);
+  color: var(--bg-dark);
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.span a {
+  color: var(--clr);
 }
