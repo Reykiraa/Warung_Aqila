@@ -1,5 +1,5 @@
 * {
-  margin: -2px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -20,14 +20,28 @@
 
 .body-menu {
   margin: 0;
+  padding: 0;
   font-family: 'poppins';
   position: sticky;
-  background-image: url();
+  background-image: url(../assets/pesan.jpg);
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #092a29;
   color: #fff;
+}
+
+.body-login {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins';
+  position: sticky;
+  background-image: url(../assets/login.webp);
+  background-color: #092a29;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 body:before {
@@ -41,21 +55,14 @@ body:before {
   z-index: -1;
 }
 
-
-header h1 {
-  color: white;
-  font-size: 6rem;
-  text-shadow: 2px 2px 2px cyan;
-  font-family: tahoma;
-}
-
 nav {
-  background-color: #092a29;
+  background-color: rgba(0, 32, 41, 0.8);
   backdrop-filter: blur(5px);
   position: sticky;
   top: 0;
   z-index: 99;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar {
@@ -63,8 +70,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem;
-  margin: auto 30px; 
-  z-index: 1000;
+  margin: auto 30px;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.logo span {
+  color: greenyellow;
 }
 
 .menu {
@@ -82,11 +97,12 @@ nav {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  transition: color ease 0.3s;
+  transition: all 100ms;
 }
 
 .menu li a:hover {
-  color: #ffbc3b;
+  color: greenyellow;
+  border-bottom: 2px solid greenyellow;
 }
 
 .logo {
@@ -172,9 +188,10 @@ nav {
 
 .maps {
   display: flex;
-  padding: 50px 0;
+  padding: 20px 0;
   justify-content: center;
   gap: 2rem;
+  background-color: rgba(0, 32, 41, 0.8);
 }
 
 .text-kontak {
@@ -204,6 +221,56 @@ nav {
   transition: all 300ms;
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+/*About us*/
+.about {
+  padding: 2rem 3%;
+  background-color: rgba(0, 32, 41, 0.8);
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  font-family: garamond;
+  margin-bottom: 3rem;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.about h2 span {
+  color: greenyellow
+}
+
+.about-pos {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 400px;
+  border-radius: 5%;
+}
+
+.about-detail {
+  flex: 1 1 35rem;
+  padding: 0 0.1rem;
+  color: white;
+}
+
+.about-detail h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-detail p {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 50;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 2rem;
 }
 
 /*footer*/
@@ -279,13 +346,14 @@ nav {
   font-family: "garamond";
   color: #e6e3e3;
   font-size: 22px;
-  margin-bottom: 20px;
+  margin: 30px 0;
 }
 
 .menu-container {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 50px;
+  margin-left: 30px;
 }
 
 .menu-item {
@@ -301,15 +369,53 @@ nav {
   transition: transform 0.3s ease;
 }
 
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-50px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(50px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .menu-item:nth-child(1) img,
 .menu-item:nth-child(3) img,
 .menu-item:nth-child(5) img {
   padding-top: 100px;
+  animation: moveDown 5s infinite;
 }
 
 .menu-item:nth-child(2) img,
 .menu-item:nth-child(4) img {
   padding-bottom: 100px;
+  animation: moveUp 5s infinite;
 }
 
 .menu-item span {
@@ -330,23 +436,78 @@ nav {
   opacity: 0.8;
 }
 
-
-/* .konten {
-  width: 50%; 
-  height: 200px;
+/*FORM LOGIN*/
+form {
+  --bg-light: #efefef;
+  --bg-dark: #161616;
+  --clr: #161616;
+  --clr-alpha: #9c9c9c60;
   display: flex;
-  gap: 5px;
-}
-
-.konten img {
-  width: 10%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid white;
-  transition: all ease-out 1s;
-}
-
-.konten img:hover {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
-} */
+  max-width: 300px;
+}
+
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="name"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+  outline: 2px solid var(--clr);
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+.form .submit {
+  padding: 1rem 0.75rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 3rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form .submit:hover {
+  background-color: var(--bg-light);
+  color: var(--bg-dark);
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.span a {
+  color: var(--clr);
+}
