@@ -7,7 +7,44 @@
 
 .body-home {
   margin: 0;
-  padding: 0;
+  padding: 0;.sosmed a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e3e3;
+  margin: 20px 10px;
+  border-radius: 50%;
+}
+
+.sosmed {
+  display: flex;
+
+}
+
+.sosmed i {
+  color: #000000;
+}
+
+.sosmed a:hover {
+  background-color: #818181;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.5s;
+}
+
+.sosmed a:hover i,
+.social a:hover i {
+  color: #ffd900;
+  transition: all ease 0.5s;
+}
+
+.footed {
+  color: rgb(214, 213, 213);
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
   font-family: 'poppins';
   position: sticky;
   background-image: url(../assets/kuliner.jpg);
