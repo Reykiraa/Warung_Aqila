@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="body-login">
@@ -21,25 +24,49 @@
       </ul>
     </div>
   </nav>
-  <div class="login-page">
-    <div>
-      <form class="form">
-        <span  class="input-span">
-          <label for="name" class="label">Nama</label>
-          <input type="name" name="name" id="name"/>
-        </span>
-        <span class="input-span">
-          <label for="email" class="label">Email</label>
-          <input type="email" name="email" id="email" />
-        </span>
-        <span class="input-span">
-          <label for="password" class="label">Password</label>
-          <input type="password" name="password" id="password" />
-        </span>
-        <input class="submit" type="submit" value="Log in" />
+  <div class="container-login">
+    <div class="login">
+      <form action="#" class="form-login">
+        <h1>Login</h1>
+        <hr>
+        <div class="input-box">
+          <input type="text" placeholder="Username" required>
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" required>
+          <i class="fa-solid fa-lock" id="i2"></i>
+        </div>
+        <div class="forgot-pw">
+          <label><input type="checkbox">"Remember me"</label>
+          <a href="#">Forgot password</a>
+        </div>
+        <button type="submit" class="tombol">Login</button>
+        <div class="link-register">
+          <p>Don't have an account?<a href="#"> Register</a></p>
+        </div>
       </form>
     </div>
   </div>
+  <footer class="footer-menu">
+    <div class="footer-info">
+      JL RIDWAN RAIS, BEJI | DEPOK CITY, WEST JAVA | COPYRIGHT 2024
+    </div>
+    <div class="footer-buttons">
+      <a href="../html/pesan.html">ORDER HERE</a>
+    </div>
+    <div class="footer-hours">
+      | EVERY DAY : 10:00AM - 21.00PM |
+    </div>
+    <div class="sosmed">
+      <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-chrome"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="footer-bottom">
+      | COPYRIGHT 2024 |
+    </div>
+  </footer>
 </body>
 
 </html>
