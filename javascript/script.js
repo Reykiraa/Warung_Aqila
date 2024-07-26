@@ -7,7 +7,6 @@ let orders = JSON.parse(localStorage.getItem('orders')) || [];
 let incoming = JSON.parse(localStorage.getItem('incoming')) || [];
 let cart = [];
 let total = 0;
-let revenue = 0;
 
 // Function to generate unique order code
 function generateOrderCode() {
@@ -110,8 +109,6 @@ function placeOrder() {
     incoming.push(orderData);
     localStorage.setItem('incoming', JSON.stringify(incoming));
     cart = [];
-    revenue += total;
-    console.log(revenue);
     displayCart();
     orderConfirmationModal.close();
     Swal.fire({
