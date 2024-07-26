@@ -8,6 +8,8 @@
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
 </head>
 
 <body class="body-menu">
@@ -81,7 +83,7 @@
 			<div class="form-and-images">
 				<form class="form-kontak">
 					<input type="text" id="customer-name" placeholder="Name">
-					<input type="text" id="customer-phone" placeholder="Phone">
+					<input type="number" id="customer-phone" placeholder="Phone" oninput="validity.valid||(value='');">
 				</form>
 				<!-- <div class="hiasan">
 					<img src="../assets/hiasan1.jpg" alt="Image 1">
@@ -89,9 +91,9 @@
 					<img src="../assets/hiasan4.jpg" alt="Image 3">
 				</div> -->
 			</div>
-			<div id="cart"></div>
 		</div>
-    </div>
+    <div id="cart"></div>
+  </div>
   <footer class="footer-menu">
     <div class="footer-info">
       JL RIDWAN RAIS, BEJI | DEPOK CITY, WEST JAVA | COPYRIGHT 2024
@@ -116,8 +118,8 @@
 				<p id="customer-details"></p>
 				<table id="order-summary-table">
 						<tr>
+                <th>Quantity</th>
 								<th>Menu</th>
-								<th>Quantity</th>
 						</tr>
 				</table>
 				<p>Order Code: <span id="order-code-display"></span></p>
@@ -126,21 +128,7 @@
 		</form>
 	</dialog>
 
-	<!-- Admin Complete Order Modal -->
-	<dialog id="complete-order-modal">
-		<form method="dialog">
-				<h2>Complete Order</h2>
-				<p id="complete-order-details"></p>
-				<table id="complete-order-summary-table">
-						<tr>
-								<th>Menu</th>
-								<th>Quantity</th>
-						</tr>
-				</table>
-				<button id="complete-order-btn" type="button">Complete Order</button>
-				<button id="cancel-complete-btn" type="button">Cancel</button>
-		</form>
-	</dialog>
+
 	
 
   <script src="../javascript/script.js"></script>
