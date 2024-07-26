@@ -3,7 +3,6 @@ const orderConfirmationModal = document.getElementById('order-confirmation-modal
 const completeOrderModal = document.getElementById('complete-order-modal');
 const incomingOrdersSection = document.getElementById('incoming-orders-section');
 
-// Load orders from localStorage
 let orders = JSON.parse(localStorage.getItem('orders')) || [];
 let incoming = JSON.parse(localStorage.getItem('incoming')) || [];
 let cart = [];
