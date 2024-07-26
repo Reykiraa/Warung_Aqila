@@ -1,6 +1,7 @@
-// Modals
+// Initialitazion
 const orderConfirmationModal = document.getElementById('order-confirmation-modal');
 const completeOrderModal = document.getElementById('complete-order-modal');
+const incomingOrdersSection = document.getElementById('incoming-orders-section');
 
 // Load orders from localStorage
 let orders = JSON.parse(localStorage.getItem('orders')) || [];
@@ -11,46 +12,46 @@ let revenue = 0;
 
 // Function to generate unique order code
 function generateOrderCode() {
-    return Math.random().toString(36).substr(2, 5);
+  return Math.random().toString(36).substr(2, 5);
 }
 
 // Function to add item to cart
 function addToCart(menu, price) {
-    const existingItem = cart.find(item => item.menu === menu);
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({ menu, price, quantity: 1 });
-    }
+  const existingItem = cart.find(item => item.menu === menu);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ menu, price, quantity: 1 });
+  }
 	total += price;
     displayCart();
 }
 
 // Function to display cart
 function displayCart() {
-    const cartDiv = document.getElementById('cart');
-    if (cart.length === 0) {
-        cartDiv.innerHTML = '<h2>Cart is empty</h2>';
-        return;
-    }
-    cartDiv.innerHTML = `
-        <h2>Cart</h2>
-        <table>
-            <tr>
-                <th>Menu</th>
-                <th>Quantity</th>
-                <th>&emsp;Price</th>
-            </tr>
-            ${cart.map(item => `
-                <tr>
-                    <td>${item.menu}</td>
-                    <td align="center">${item.quantity}</td>
-                    <td align="center">&emsp;${item.price * item.quantity}</td>
-                </tr>
-            `).join('')}
-        </table>
-        <button class="orderBtn" onclick="openOrderConfirmationModal()">Order</button>
-    `;
+  const cartDiv = document.getElementById('cart');
+  if (cart.length === 0) {
+    cartDiv.innerHTML = '<h2>Cart is empty</h2>';
+    return;
+  }
+  cartDiv.innerHTML = `
+    <h2>Cart</h2>
+    <table>
+      <tr>
+        <th>Menu</th>
+        <th>Quantity</th>
+        <th>&emsp;Price</th>
+      </tr>
+      ${cart.map(item => `
+      <tr>
+        <td>${item.menu}</td>
+        <td align="center">${item.quantity}</td>
+        <td align="center">&emsp;${item.price * item.quantity}</td>
+      </tr>
+      `).join('')}
+    </table>
+    <button class="orderBtn" onclick="openOrderConfirmationModal()">Order</button>
+  `;
 }
 
 // Function to open order confirmation modal
@@ -126,7 +127,6 @@ function placeOrder() {
     // alert(`Order placed! Your order code is: ${orderCode}`);
 }
 
-const incomingOrdersSection = document.getElementById('incoming-orders-section');
 function showIncomingOrders() {
   if (incoming.length === 0) {
     incomingOrdersSection.innerHTML = '<h2>No incoming orders</h2>';
@@ -165,6 +165,3 @@ function showIncomingOrders() {
 showIncomingOrders();
 displayCart();
 
-// Modal buttons event listeners
-// document.getElementById('confirm-order-btn').addEventListener('click', placeOrder);
-// document.getElementById('cancel-order-btn').addEventListener('click', () => orderConfirmationModal.close());
