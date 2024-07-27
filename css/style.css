@@ -1,8 +1,13 @@
 * {
   margin: 0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'poppins';
 }
 
 .body-home {
@@ -59,6 +64,7 @@ body:before {
 nav {
   background-color: rgba(0, 32, 41, 0.8);
   backdrop-filter: blur(5px);
+  width: 100%;
   position: sticky;
   top: 0;
   z-index: 99;
@@ -203,25 +209,59 @@ nav {
   color: white;
 }
 
-/* style pesan.html */
+/*STYLE MENU DI HOMEEEE*/
+.teks {
+  text-align: center;
+  font-family: 'garamond';
+  color: white;
+  margin: 30px;
+}
 
-.tambah {
-  padding: 0.1rem 0.075rem;
-  width: 100%;
+.menu-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 30px;
+}
+
+.menu-item {
+  position: relative;
+  width: 23%;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.menu-item img {
+  width: 85%;
+  height: 500px;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:nth-child(1) img,
+.menu-item:nth-child(3) img,
+.menu-item:nth-child(5) img {
+  padding-top: 100px;
+}
+
+.menu-item:nth-child(2) img,
+.menu-item:nth-child(4) img {
+  padding-bottom: 100px;
+}
+
+.menu-item:hover img {
+  transform: scale(1.1) translateY(-10px);
+}
+
+/*STYLE FOOTER*/
+
+footer {
+  height: 300px;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  border-radius: 3rem;
-  background-color: #161616;
+  position: relative;
+  background-color: #092a29;
   color: #efefef;
-  background-color: #161616;
-  color: #efefef;
-  border-style: none;
-  cursor: pointer;
-  transition: all 300ms;
-  font-weight: 600;
-  font-size: 0.9rem;
+  gap: 10px;
 }
 
 /*About us*/
@@ -278,24 +318,23 @@ nav {
 
 .footer-menu {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  text-align: center;
-  padding: 50px;
-  background-color: #092a29;
-  color: white;
+  justify-content: center;
 }
 
 .footer-menu a {
-  margin: 0 15px;
   text-decoration: none;
-  font-size: 18px;
+}
+
+.footer-info {
+  margin-bottom: 20px;
+}
+
+.footer-buttons {
+  margin-bottom: 20px;
 }
 
 .footer-buttons a {
   padding: 10px 20px;
-  margin: 0 10px;
   border: 1px solid #fff;
   text-decoration: none;
   color: #fff;
@@ -319,11 +358,13 @@ nav {
   justify-content: center;
   align-items: center;
   background-color: #e6e3e3;
+  margin: 20px 10px;
   border-radius: 50%;
 }
 
 .sosmed {
   display: flex;
+
 }
 
 .sosmed i {
@@ -338,11 +379,25 @@ nav {
 
 .sosmed a:hover i,
 .social a:hover i {
-  color: aquamarine;
+  color: #ffd900;
   transition: all ease 0.5s;
 }
 
-.teks {
+.container,
+.container-order {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem 1rem 0;
+  border-radius: 5px;
+}
+
+/* STYLING FOR pesan.html */
+
+.food {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   text-align: center;
   font-family: "garamond";
   color: #e6e3e3;
@@ -362,6 +417,8 @@ nav {
   width: 23%;
   overflow: hidden;
   border-radius: 5px;
+  flex: 1;
+  transition: transform 0.2s ease;
 }
 
 .menu-item img {
@@ -419,18 +476,41 @@ nav {
   animation: moveUp 5s infinite;
 }
 
-.menu-item span {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
+.order {
+  display: block;
+  padding: 0.75rem;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 3rem;
+  background-color: #1dba4a;
+  color: #171717;
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-.menu-item:hover img {
-  transform: scale(1.1);
+/* STYLING FOR login.html */
+
+.form {
+  --bg-light: #efefef;
+  --bg-dark: #161616;
+  --clr: #161616;
+  --clr-alpha: #9c9c9c60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .menu-item:hover span {
