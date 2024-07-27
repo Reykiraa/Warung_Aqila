@@ -50,6 +50,19 @@ body {
   height: 100vh;
 }
 
+.body-admin {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins';
+  position: sticky;
+  background-image: url(../assets/admin.jpg);
+  background-color: #092a29;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 body:before {
   content: "";
   position: fixed;
@@ -118,10 +131,11 @@ nav {
 }
 
 .container {
+  display: flex;
+  justify-content: center;
   max-width: 1200px;
   margin: auto;
   padding: 0 1rem;
-  padding-bottom: 0.2rem;
   border-radius: 5px;
 }
 
@@ -150,10 +164,6 @@ nav {
   border-radius: 5px;
   flex: 1;
   transition: transform 0.2s ease;
-}
-
-.food-item:hover {
-  transform: scale(1.1);
 }
 
 .food-item img {
@@ -262,6 +272,26 @@ footer {
   background-color: #092a29;
   color: #efefef;
   gap: 10px;
+}
+
+.tambah {
+  padding: 3px;
+  border-radius: 5px;
+  background-color: rgb(235, 221, 195);
+  box-shadow: 0px 5px 10px black;
+}
+
+.tambah:hover, .orderBtn:hover {
+  background-color: #092a29;
+  color: white;
+}
+
+.orderBtn {
+  display: block;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 5px;
 }
 
 /*About us*/
@@ -423,7 +453,7 @@ footer {
 
 .menu-item img {
   width: 85%;
-  height: 500px;
+  height: 85%;
   transition: transform 0.3s ease;
 }
 
@@ -595,7 +625,7 @@ footer {
 
 .login {
   width: 400px;
-  margin: 100px 400px;
+  margin: 100px auto;
   background: transparent;
   color: white;
   border-radius: 10px;
@@ -639,15 +669,15 @@ footer {
 
 .input-box i {
   position: absolute;
-  right: 475px;
-  top: 46%;
+  right: 480px;
+  top: 43%;
   transform: translateY(-50%);
   font-size: 15px;
   color: white;
 }
 
 #i2 {
-  top: 58%;
+  top: 55%;
 }
 
 .form-login .forgot-pw {
@@ -794,14 +824,14 @@ footer {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex: 1;
+  padding-bottom: 10px;
 }
 
 .container-kontak h1 {
-  position: absolute;
-  left: 28px;
   color: rgba(255, 255, 255, 0.678);
-  font-size: 9rem;
+  font-size: 2.5rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   mix-blend-mode: overlay;
@@ -884,6 +914,12 @@ footer {
   padding: 10px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .form-kontak input[type="submit"] {
   padding: 10px 20px;
   border: 1px solid black;
@@ -894,4 +930,102 @@ footer {
 .form-kontak input[type="submit"]:hover {
   background-color: chocolate;
   color: #fff;
+}
+
+.form-kontak button {
+  margin-top: 10px;
+}
+
+/* pop up */
+
+dialog {
+  margin: auto auto;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+dialog form {
+  display: flex;
+  flex-direction: column;
+}
+dialog form tr{
+  display: flex;
+  align-items: center;
+}
+dialog form button {
+  margin-top: 10px;
+}
+
+/* STYLE admin.html */
+.admin-banner h1{
+  font-family: helvetica;
+  color: white;
+}
+
+.container-admin {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background: antiquewhite;
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 93%);
+  font-family: helvetica;
+  border-radius: 10px;
+}
+
+#cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cart button {
+  display: block;
+  width: 15%;
+}
+
+#incoming-orders-section h2, #cart h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  /* background-color: #818181; */
+}
+
+table, #order-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+#cart table {
+  max-width: 30%;
+}
+
+tr {
+  transition: transform 0.3s, background-color 0.3s;
+} 
+
+tr:hover {
+  background-color: #092a29;
+  color: white;
+  transform: scale(1.03);
+  box-shadow: 0 2px 8px solid white;
+}
+
+tr:hover td {
+  border: none;
+}
+
+th, td {
+  border: 1px solid #bfbfbf;
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
 }

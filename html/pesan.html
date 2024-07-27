@@ -1,116 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>WARUNG AQILA</title>
-	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-	<link rel="stylesheet" href="../css/style.css">
-	<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WARUNG AQILA</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
 </head>
 <body class="body-menu">
   <nav>
     <div class="navbar">
-			<div class="logo">
-				<h1><span>W</span>aru<span>ng</span><span>A</span>qil<span>a</span></h1>
-			</div>
-			<ul class="menu">
-				<li><a href="../html/home.html">HOME</a></li>
-				<li><a href="../html/pesan.html">PESAN</a></li>
-				<li><a href="../html/login.html">LOGIN</a></li>
-			</ul>
-		</div>
-	</nav>
-	<div class="container">
-		<div class="food">
-			<!-- <h2>Our Top Menu</h2> -->
-			<div class="food-item">
-				<img src="../assets/ayam-bakar.jpeg" alt="">
-				<p>Ayam Bakar</p>
-				<button id="" class="tambah">TAMBAH</button>
-			</div>
-			<div class="food-item">
-				<img src="../assets/ayam-geprek-sambal-hijau.jpeg" alt="">
-				<p>Ayam Geprek Sambal Hijau</p>
-				<button id="" class="tambah">TAMBAH</button>
-			</div>
-			<div class="food-item">
-				<img src="../assets/ayam-geprek-sambal-jontor.jpeg" alt="">
-				<p>Ayam Geprek Sambal Jontor</p>
-				<button id="" class="tambah">TAMBAH</button>
-			</div>
-			<div class="food-item">
-				<img src="../assets/chicken-barbeque.jpeg" alt="">
-				<p>Chicken Barbeque</p>
-				<button id="" class="tambah">TAMBAH</button>
-			</div>
-			<div class="food-item">
-				<img src="../assets/chicken-karage.jpeg" alt="">
-				<p>Chicken Karage</p>
-				<button id="" class="tambah">TAMBAH</button>
-			</div>
-			<div class="food-item">
-				<img src="../assets/sate-kesamba.jpeg" alt="">
-				<p>Sate Kesamba</p>
-				<button id="" class="tambah">TAMBAH</button>
-			</div>
-			<div class="food-item">
-				<img src="../assets/sate-taichan.jpeg" alt="">
-				<p>Sate Taichan</p>
-				<button id="" class="tambah">TAMBAH</button>
-			</div>
-			<div class="food-item">
-				<img src="../assets/teriyaki-pedas.jpeg" alt="">
-				<p>Teriyaki Pedas</p>
-				<button id="" class="tambah">TAMBAH</button>
-			</div>
-		</div>
-	</div>
-	<div class="contact-us">
-        <div class="container-kontak">
-            <h1>AqilaCatering</h1>
-            <p>Warung Aqila can provide an amazing experience for your day. Please contact our staff to learn more on how we can cater your next event.</p>
-            <div class="form-and-images">
-                <form class="form-kontak">
-                    <label for="full-name">FULL NAME</label>
-                    <input type="text" id="full-name" name="full-name"><br><br>
-                    <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email"><br><br>
-                    <label for="notelp">TELP NUMBER</label>
-                    <input type="text" id="notelp" name="notelp"><br><br>
-                    <label for="location">LOCATION</label>
-                    <input type="text" id="location" name="location"><br><br>
-                    <label for="budget">BUDGET</label>
-                    <input type="number" id="budget" name="budget"><br><br>
-                    <input type="submit" value="SUBMIT">
-                </form>
-                <div class="hiasan">
-                    <img src="../assets/hiasan1.jpg" alt="Image 1">
-                    <img src="../assets/hiasan5.jpg" alt="Image 2" id="img2">
-					<img src="../assets/hiasan4.jpg" alt="Image 3">
-                </div>
-            </div>
+      <div class="logo">
+        <h1><span>W</span>aru<span>ng</span><span>A</span>qil<span>a</span></h1>
+      </div>
+      <ul class="menu">
+        <li><a href="../html/home.html">HOME</a></li>
+        <li><a href="../html/pesan.html">PESAN</a></li>
+        <li><a href="../html/login.html">LOGIN</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="food">
+        <div class="food-item">
+            <img src="../assets/ayam-bakar.jpeg" alt="">
+            <p>Ayam Bakar</p>
+            <button class="tambah" onclick="addToCart('Ayam Bakar', 12000)">TAMBAH</button>
+        </div>
+        <div class="food-item">
+            <img src="../assets/ayam-geprek-sambal-hijau.jpeg" alt="">
+            <p>Ayam Geprek Sambal Hijau</p>
+            <button class="tambah" onclick="addToCart('Ayam Geprek Sambal Hijau', 12000)">TAMBAH</button>
+        </div>
+        <div class="food-item">
+            <img src="../assets/ayam-geprek-sambal-jontor.jpeg" alt="">
+            <p>Ayam Geprek Sambal Jontor</p>
+            <button class="tambah" onclick="addToCart('Ayam Geprek Sambal Jontor', 12000)">TAMBAH</button>
+        </div>
+        <div class="food-item">
+            <img src="../assets/chicken-barbeque.jpeg" alt="">
+            <p>Chicken Barbeque</p>
+            <button class="tambah" onclick="addToCart('Chicken Barbeque', 15000)">TAMBAH</button>
+        </div>
+        <div class="food-item">
+            <img src="../assets/chicken-karage.jpeg" alt="">
+            <p>Chicken Karage</p>
+            <button class="tambah" onclick="addToCart('Chicken Karage', 12000)">TAMBAH</button>
+        </div>
+        <div class="food-item">
+            <img src="../assets/sate-kesamba.jpeg" alt="">
+            <p>Sate Kesamba</p>
+            <button class="tambah" onclick="addToCart('Sate Kesamba', 15000)">TAMBAH</button>
+        </div>
+        <div class="food-item">
+            <img src="../assets/sate-taichan.jpeg" alt="">
+            <p>Sate Taichan</p>
+            <button class="tambah" onclick="addToCart('Sate Taichan', 15000)">TAMBAH</button>
+        </div>
+        <div class="food-item">
+            <img src="../assets/teriyaki-pedas.jpeg" alt="">
+            <p>Teriyaki Pedas</p>
+            <button class="tambah" onclick="addToCart('Teriyaki Pedas', 15000)">TAMBAH</button>
         </div>
     </div>
-	<footer class="footer-menu">
-		<div class="footer-info">
-			JL RIDWAN RAIS, BEJI | DEPOK CITY, WEST JAVA | COPYRIGHT 2024
+
+	</div>
+
+	<!-- Order Summary -->
+
+	<!-- <div class="container">
+		<div id="order-summary"></div>
+	</div> -->
+  
+  <div class="contact-us">
+		<div class="container-kontak">
+			<h1>Customer Details</h1>
+			<div class="form-and-images">
+				<form class="form-kontak">
+					<input type="text" id="customer-name" placeholder="Name">
+					<input type="number" id="customer-phone" placeholder="Phone" oninput="validity.valid||(value='');">
+				</form>
+				<!-- <div class="hiasan">
+					<img src="../assets/hiasan1.jpg" alt="Image 1">
+					<img src="../assets/hiasan5.jpg" alt="Image 2" id="img2">
+					<img src="../assets/hiasan4.jpg" alt="Image 3">
+				</div> -->
+			</div>
 		</div>
-		<div class="footer-buttons">
-			<a href="../html/pesan.html">ORDER HERE</a>
-		</div>
-		<div class="footer-hours">
-			| EVERY DAY : 10:00AM - 21.00PM |
-		</div>
-		<div class="sosmed">
-			<a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-			<a href="#" target="_blank"><i class="fab fa-chrome"></i></a>
-			<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-		</div>
-		<div class="footer-bottom">
-			| COPYRIGHT 2024 |
-		</div>
-	</footer>
+    <div id="cart"></div>
+  </div>
+  <footer class="footer-menu">
+    <div class="footer-info">
+      JL RIDWAN RAIS, BEJI | DEPOK CITY, WEST JAVA | COPYRIGHT 2024
+    </div>
+    <div class="footer-hours">
+      | EVERY DAY : 10:00AM - 21.00PM |
+    </div>
+    <div class="sosmed">
+      <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-chrome"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="footer-bottom">
+      | COPYRIGHT 2024 |
+    </div>
+  </footer>
+
+	<!-- Order Confirmation Modal -->
+	<dialog id="order-confirmation-modal">
+		<form method="dialog">
+				<h2>Order Confirmation</h2>
+				<p id="customer-details"></p>
+				<table id="order-summary-table">
+						<tr>
+                <th>Quantity</th>
+								<th>Menu</th>
+						</tr>
+				</table>
+				<p>Order Code: <span id="order-code-display"></span></p>
+				<button id="confirm-order-btn" type="button">Confirm</button>
+				<button id="cancel-order-btn" type="button">Cancel</button>
+		</form>
+	</dialog>
+
+
+	
+
+  <script src="../javascript/script.js"></script>
 </body>
 
 </html>
